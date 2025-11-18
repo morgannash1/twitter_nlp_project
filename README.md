@@ -1,7 +1,9 @@
 # Twitter Natural Language Processing Project
-Morgan Nash
-
+Author: [Morgan Nash](mailto:morganmichellenash@gmail.com)
 November 2025
+
+<img src="images/global_digital_network.jpg" width="900">
+
 # Introduction
 This project uses Natural Language Processing (NLP) and Classification Methods to predict the sentiment of a Tweet based on its content.
 
