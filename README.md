@@ -44,9 +44,7 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 
 <img src="images/top_positive_predictors.jpg" width="1000">
 
-<img src="images/top_words_before.jpg" width="900">
 
-<img src="images/top_words_after.jpg" width="900">
 
 # Conclusion
 
