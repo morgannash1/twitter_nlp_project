@@ -28,7 +28,7 @@ Neutral  60.98%
 Positive 32.75%
 Negative  6.27%
 
-<img src="images/sentiment_distribution.jpg" width="600">
+<img src="images/sentiment_distribution.jpg" width="800">
 
 
 ## Data Preparation:
@@ -36,17 +36,17 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 
 # Exploratory Data Analysis
 
-<img src="images/initial_sentiment_distribution.jpg" width="600">
+<img src="images/initial_sentiment_distribution.jpg" width="800">
 
-<img src="images/updated_sentiment_distribution.jpg" width="600">
+<img src="images/updated_sentiment_distribution.jpg" width="800">
 
-<img src="images/top_negative_predictors.jpg" width="600">
+<img src="images/top_negative_predictors.jpg" width="1000">
 
-<img src="images/top_positive_predictors.jpg" width="600">
+<img src="images/top_positive_predictors.jpg" width="1000">
 
-<img src="images/top_words_before.jpg" width="600">
+<img src="images/top_words_before.jpg" width="900">
 
-<img src="images/top_words_after.jpg" width="600">
+<img src="images/top_words_after.jpg" width="900">
 
 # Conclusion
 
