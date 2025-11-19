@@ -50,7 +50,6 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 
 <img src="images/updated_sentiment_distribution.jpg" width="800">
 
-<img src="images/updated_sentiment_distribution.jpg" width="800">
 
 
 <img src="images/top_neg_uni_after_1.jpg" width="500"> <img src="images/top_neg_uni_after_2.jpg" width="500">
@@ -70,7 +69,7 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 
 <img src="images/top_words_after.jpg" width="1000">
 
-<img src="images/top_words_after2.jpg" width="1000">
+<img src="images/top_words_after_2.jpg" width="1000">
 
 
 <img src="images/top_negative_predictors.jpg" width="1000">
