@@ -43,7 +43,7 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 <img src="images/updated_sentiment_distribution.jpg" width="800">
 
 
-<img src="images/top_neg_uni_after_1.jpg" width="400"> <img src="images/top_neg_uni_after_2.jpg" width="400">
+<img src="images/top_neg_uni_after_1.jpg" width="600"> <img src="images/top_neg_uni_after_2.jpg" width="600">
 
 <img src="images/top_neg_bi_after_1.jpg" width="400"> <img src="images/top_neg_bi_after_2.jpg" width="400">
 
