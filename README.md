@@ -40,6 +40,25 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 
 <img src="images/updated_sentiment_distribution.jpg" width="800">
 
+<img src="images/updated_sentiment_distribution.jpg" width="800">
+
+
+<img src="images/top_neg_uni_after_1.jpg" width="400"> <img src="images/top_neg_uni_after_2.jpg" width="400">
+
+<img src="images/top_neg_bi_after_1.jpg" width="400"> <img src="images/top_neg_bi_after_2.jpg" width="400">
+
+<img src="images/top_neg_tri_after_1.jpg" width="400"> <img src="images/top_neg_tri_after_2.jpg" width="400">
+
+
+<img src="images/top_pos_uni_after_1.jpg" width="400"> <img src="images/top_pos_uni_after_2.jpg" width="400">
+
+<img src="images/top_pos_bi_after_1.jpg" width="400"> <img src="images/top_pos_bi_after_2.jpg" width="400">
+
+<img src="images/top_pos_tri_after_1.jpg" width="400"> <img src="images/top_pos_tri_after_2.jpg" width="400">
+
+
+
+
 <img src="images/top_negative_predictors.jpg" width="1000">
 
 <img src="images/top_positive_predictors.jpg" width="1000">
