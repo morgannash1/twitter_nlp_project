@@ -92,7 +92,7 @@ I decided to test a variety of different types of classifiers (6 in total):
 
 - Linear and Probability Models: **Logistic Regression, LinearSVC, and MultinomialNB** models were used to establish baselines, as they are fast and interpretable, especially with high-dimensional text data. These models draw a straight line or plane to separate positive tweets from negative ones.
 
--Complex Pattern Models: **Decision Tree and Random Forest** models were chosen to explore non-linear relationships, aiming to capture complex sentiment rules that simple linear models might miss. These models can find unique patterns but they carry the risk of overfitting.
+- Complex Pattern Models: **Decision Tree and Random Forest** models were chosen to explore non-linear relationships, aiming to capture complex sentiment rules that simple linear models might miss. These models can find unique patterns but they carry the risk of overfitting.
 
 - Distance-Based Model: **K-Nearest Neighbors** would classify a new tweet based on the sentiment of the closest similar tweets already seen. A KNN model would generally not be the ideal or best-performing model for text, but I wanted to check the initial results.
 
