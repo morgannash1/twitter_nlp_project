@@ -156,7 +156,7 @@ The final model's performance on the unseen test data achieved a Negative F1-Sco
 
 
 
-## Next Steps: # Next Steps: 
+## Next Steps:  
 There are still improvements to be made before the model could be used as a fully automated tool. We recommend the following 
 1. **Increase Recall:** Explore advanced techniques to overcome the class imbalance (i.e. synthetic data generation, oversampling the minority) As well as explore additional preprocessing steps like lemmatization. The main goal of next steps is to help the model catch more than 30% of true 'negative' tweets.
 2. **Acquire More Data:** This project uses a dataset from 2013 which is quite outdated. Collect a larger dataset with more recent data and retrain the model.
