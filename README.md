@@ -30,10 +30,11 @@ The final model acts as a first-pass filtering system that can help several impo
 The dataset used for this project comes from [CrowdFlower Open Source Datasets](https://data.world/crowdflower/brands-and-product-emotions) and contains over 9000 tweets from 2013 that reference Apple or Google products. The tweets were related to the [South by Southwest festival (SXSW)](https://www.sxsw.com/) and were rated by humans as to whether the tweets expressed positive, negative, no emotion towards a brand or product, or they couldn't tell. I combined the 'no emotion..' and 'can't tell' into a 'neutral' sentiment. The dataset originally contained 3 columns which I renamed for clarity: tweet, product_name, and sentiment.
 
 ## Limitations
-
+The dataset is relatively small and outdated. It's specific focus on Apple and Google Brands around the South by Southwest Festival may be limiting the model to learn about 
 
 
 ### Sentiment Distribution
+The target 'sentiment' class is unbalanced:
 
 Neutral  60.98%
 
@@ -48,7 +49,7 @@ Negative  6.27%
 
 To prepare the data, I performed basic cleaning including removal of duplicates, removal of null values, renamed columns for clarity and standardized the text case. I used Regex patterns to remove hashtags, urls, htmls, punctuation, etc. I created two custom stopwords lists. The first included certain words from NLTK's 'english' list and a couple of dataset specific words. The second was more extensive, combining the entire 'english' stopwords list from NLTK with more sentiment-neutral topic noise words like 'apple' and 'google'. Excluding these words from the features helped the model to ignore some of the noise. I also used word_tokenize from NLTK to tokenize the text data for exploratory analysis.
 
-# Exploratory Data Analysis
+# Exploratory Data Analysis:
 
 <img src="images/initial_sentiment_distribution.jpg" width="800">
 
@@ -59,6 +60,8 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 
 
 <img src="images/top_words_before.jpg" width="1000">
+
+# Top 
 
 <img src="images/top_words_after.jpg" width="1000">
 
