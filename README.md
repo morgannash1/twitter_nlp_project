@@ -14,7 +14,13 @@ This project uses Natural Language Processing (NLP) and Classification Methods t
 
 The presence of social media today allows for constant real-time communication which can present issues for companies to deal with. [Twitter](https://x.com/), now X, is one of the largest social media platforms where users' short messages are posted in real-time. One negative tweet could quickly blow up into a company's PR nightmare if left untouched. Ineffective monitoring of what's being said about a company online can lead to slow crisis response, missed customer service opportunities, and permanent brand damage. A classification model is necessary to filter out the noise and help to automate some of this process.
 
+
+## Objective:¶
+Monitoring tweets manually would be impossible. The main goal of this project is to build an NLP classification model that acts as a screening system to categorize incoming online text into sentiment classes (negative, neutral, or positive). We prioritize the negative category, as it carries the highest risk. The model's primary features are the raw tweet text, and the mulit-class target is the sentiment. Once the model labels a tweet as negative, human teams can intervene and address them before they escalate, preventing minor complaints from growing into major public relations crises.
+
 <img src="images/domino_effect.jpg" width="600">
+
+
 
 ### Stakeholders:
 
@@ -29,9 +35,11 @@ The final model acts as a first-pass filtering system that can help several impo
 
 The dataset used for this project comes from [CrowdFlower Open Source Datasets](https://data.world/crowdflower/brands-and-product-emotions) and contains over 9000 tweets from 2013 that reference Apple or Google products. The tweets were related to the [South by Southwest festival (SXSW)](https://www.sxsw.com/) and were rated by humans as to whether the tweets expressed positive, negative, no emotion towards a brand or product, or they couldn't tell. I combined the 'no emotion..' and 'can't tell' into a 'neutral' sentiment. The dataset originally contained 3 columns which I renamed for clarity: tweet, product_name, and sentiment.
 
+## Limitations:
+This data is limited as it is an unbalanced collection of tweets about a focused topic and is from 2013. This project establishes a classification model. Its accuracy and ability to generalize can be further refined over time with more labeled data, ensuring it would remain effective as online language and sentiment patterns evolve. Sentiment is not always black and white, even humans can have a hard time picking out a sentiment from tweets without more context. The scope of this project includes model classification and evaluation. It does not include the engineering of a live, real-time alerting system.
 
 
-### Sentiment Distribution
+### Sentiment Distribution:
 
 The target 'sentiment' class is imbalanced:
 
@@ -56,6 +64,7 @@ The dataset contributors were only asked to fill in the product_name column if t
 
 To prepare the data, I performed basic cleaning including removal of duplicates, removal of null values, renamed columns for clarity and standardized the text case. I used Regex patterns to remove hashtags, urls, htmls, punctuation, etc. 
 
+### Stopwords:
 I created two custom stopwords lists. The first included certain words from NLTK's 'english' list and a couple of dataset specific words. The second was more extensive, combining the entire 'english' stopwords list from NLTK with more sentiment-neutral topic noise words like 'apple' and 'google'. Excluding these words from the features helped the model to ignore some of the noise. The following plots show the most frequent words 1. before removing any stopwords, 2. after removing the first, short list of stopwords, and 3. after removing the more extensive list of stopwords. 
 
 
@@ -74,29 +83,29 @@ My approach to sentiment classification began by running a dummy model to use as
 
 I chose to test out two kinds of vectorizers. For each of these vectorizers, I used both lists of custom stopwords. (4 total Vectorizers)
 
-CountVectorizer: counts how many times a word or phrase appears and is good for simple, linear models
+**CountVectorizer:** counts how many times a word or phrase appears and is good for simple, linear models
 
-TfidfVectorizer: counts words and weights them by their uniqueness, and proves to be more effective for more complex models that need to isolate rare, predictive words
+**TfidfVectorizer:** counts words and weights them by their uniqueness, and proves to be more effective for more complex models that need to isolate rare, predictive words
 
 I decided to test a variety of different types of classifiers (6 in total):
 
-Linear and Probability Models: Logistic Regression, LinearSVC, and MultinomialNB models were used to establish baselines, as they are fast and interpretable, especially with high-dimensional text data. These models draw a straight line or plane to separate positive tweets from negative ones.
+Linear and Probability Models: **Logistic Regression, LinearSVC, and MultinomialNB** models were used to establish baselines, as they are fast and interpretable, especially with high-dimensional text data. These models draw a straight line or plane to separate positive tweets from negative ones.
 
-Complex Pattern Models: Decision Tree and Random Forest models were chosen to explore non-linear relationships, aiming to capture complex sentiment rules that simple linear models might miss. These models can find unique patterns but they carry the risk of overfitting.
+Complex Pattern Models: **Decision Tree and Random Forest** models were chosen to explore non-linear relationships, aiming to capture complex sentiment rules that simple linear models might miss. These models can find unique patterns but they carry the risk of overfitting.
 
-Distance-Based Model: K-Nearest Neighbors would classify a new tweet based on the sentiment of the closest similar tweets already seen. A KNN model would generally not be the ideal or best-performing model for text, but I wanted to check the initial results.
+Distance-Based Model: **K-Nearest Neighbors** would classify a new tweet based on the sentiment of the closest similar tweets already seen. A KNN model would generally not be the ideal or best-performing model for text, but I wanted to check the initial results.
 
 I then created a for loop that creates pipelines and tests each vectorizer with each model and compared the results, allowing me to determine the model that was the most capable of maximizing the Negative F1-Score in the presence of class imbalance.
 
 Finally, I chose to tune the hyperparameters of one of the LinearSVC models, attempting to improve results before selecting the final model.
 
 ### Rationale for Evaluation Metrics:
-I chose to use the Negative F1-Score as my main evaluation metric as it is a compromise between the model's ability to find negative tweets (Recall) and its ability to be correct when it does so (Precision). F1-Score is a good metric when evaluating performance on an imbalanced class because it requires the model to perform well on both measures simultaneously.
+I chose to use the **Negative F1-Score** as my main evaluation metric as it is a compromise between the model's ability to find negative tweets (Recall) and its ability to be correct when it does so (Precision). F1-Score is a good metric when evaluating performance on an imbalanced class because it requires the model to perform well on both measures simultaneously.
 
 ## Initial Model Results: 
-The dummy baseline model had an F1-Score of 0 for the target negative class and an Accuracy of 61%. All of the vectorizer and classifier combinations produced significantly better results, although there's still plenty of room for improvement.
+The dummy baseline model had an F1-Score of 0% for the target negative class and an Accuracy of 61%. All of the vectorizer and classifier combinations produced significantly better results, although there's still plenty of room for improvement.
 
-Top 5 Models (ranked by the critical Negative F1-Score) demonstrate the effectiveness of both tree-based and linear algorithms on the refined text features:
+Top 5 Models (ranked by the critical Negative F1-Score):
 
 CountVectorizer2 + DecisionTreeClassifier: Neg_F1 of 33.6%
 TfidfVectorizer2 + DecisionTreeClassifier: Neg_F1 of 31.9%
@@ -120,9 +129,9 @@ For this filter system designed to alert people to negative tweets, reliability 
 ## Hyperparameter Tuning Steps:
 I decided to tune the TfidfVectorizer2 + LinearSVC model using class_weight='balanced' to address the high class imbalance and try various values of the regularization parameter C to optimize generalization.
 
-Setting class_weight='balanced' tells the LinearSVC to assign a higher penalty to misclassifying the minority classes and a lower penalty to misclassifying a common neutral tweet. This forces the model to work harder to learn the distinct patterns of the crisis-alerting negative sentiment, with the goal of increasing Negative Recall.
+Setting **class_weight='balanced'** tells the LinearSVC to assign a higher penalty to misclassifying the minority classes and a lower penalty to misclassifying a common neutral tweet. This forces the model to work harder to learn the distinct patterns of the crisis-alerting negative sentiment, with the goal of increasing Negative Recall.
 
-The 'C' parameter controls the model's complexity and ability to generalize to unseen data. A smaller C = stronger regularization which forces the model to be simpler, prioritizing a wider margin between the classes. This reduces the risk of overfitting the training data and generally improves performance on the test set. A larger C = weaker regularization which allows the model to become more complex, prioritizing a perfect fit to every single training point.
+The **'C' parameter** controls the model's complexity and ability to generalize to unseen data. A smaller C = stronger regularization which forces the model to be simpler, prioritizing a wider margin between the classes. This reduces the risk of overfitting the training data and generally improves performance on the test set. A larger C = weaker regularization which allows the model to become more complex, prioritizing a perfect fit to every single training point.
 
 # Evaluation of Tuned, Final Model:
 The hyperparameter tuning successfully improved the TfidfVectorizer2 + LinearSVC model. Our final model achieved a Negative F1-Score of 38% (up from 31.8%) with an overall accuracy of 68%.
