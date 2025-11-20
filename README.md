@@ -152,9 +152,15 @@ The final model's performance on the unseen test data achieved a Negative F1-Sco
 <img src="images/top_positive_predictors.jpg" width="1000">
 
 
-## Recommendations
 
-## Next Steps
+## Next Steps: # Next Steps: 
+There are still improvements to be made before the model could be used as a fully automated tool. We recommend the following 
+1. **Increase Recall:** Explore advanced techniques to overcome the class imbalance (i.e. synthetic data generation, oversampling the minority) As well as explore additional preprocessing steps like lemmatization. The main goal of next steps is to help the model catch more than 30% of true 'negative' tweets.
+2. **Acquire More Data:** This project uses a dataset from 2013 which is quite outdated. Collect a larger dataset with more recent data and retrain the model.
+3. **Immediate Deployment and Expansion:** Use the model in its current form to provide immediate value as a First-Pass Filter in to monitor and confirm its performance in a live data environment.
+
+
+**Proactive Opportunity:** Adapt the model's to pay attention the Positive class to identify positive traction for proactive marketing and engagement. This would transitioning the model from a defensive measure to a proactive asset.
 
 ## For More Information
 
