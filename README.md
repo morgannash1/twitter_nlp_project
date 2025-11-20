@@ -85,17 +85,16 @@ My approach to sentiment classification began by running a dummy model to use as
 
 I chose to test out two kinds of vectorizers. For each of these vectorizers, I used both lists of custom stopwords. (4 total Vectorizers)
 
-    **CountVectorizer:** counts how many times a word or phrase appears and is good for simple, linear models
-
-    **TfidfVectorizer:** counts words and weights them by their uniqueness, and proves to be more effective for more complex models that need to isolate rare, predictive words
+- **CountVectorizer:** counts how many times a word or phrase appears and is good for simple, linear models
+- **TfidfVectorizer:** counts words and weights them by their uniqueness, and proves to be more effective for more complex models that need to isolate rare, predictive words
 
 I decided to test a variety of different types of classifiers (6 in total):
 
-    Linear and Probability Models: **Logistic Regression, LinearSVC, and MultinomialNB** models were used to establish baselines, as they are fast and interpretable, especially with high-dimensional text data. These models draw a straight line or plane to separate positive tweets from negative ones.
+- Linear and Probability Models: **Logistic Regression, LinearSVC, and MultinomialNB** models were used to establish baselines, as they are fast and interpretable, especially with high-dimensional text data. These models draw a straight line or plane to separate positive tweets from negative ones.
 
-    Complex Pattern Models: **Decision Tree and Random Forest** models were chosen to explore non-linear relationships, aiming to capture complex sentiment rules that simple linear models might miss. These models can find unique patterns but they carry the risk of overfitting.
+-Complex Pattern Models: **Decision Tree and Random Forest** models were chosen to explore non-linear relationships, aiming to capture complex sentiment rules that simple linear models might miss. These models can find unique patterns but they carry the risk of overfitting.
 
-    Distance-Based Model: **K-Nearest Neighbors** would classify a new tweet based on the sentiment of the closest similar tweets already seen. A KNN model would generally not be the ideal or best-performing model for text, but I wanted to check the initial results.
+- Distance-Based Model: **K-Nearest Neighbors** would classify a new tweet based on the sentiment of the closest similar tweets already seen. A KNN model would generally not be the ideal or best-performing model for text, but I wanted to check the initial results.
 
 I then created a for loop that creates pipelines and tests each vectorizer with each model and compared the results, allowing me to determine the model that was the most capable of maximizing the Negative F1-Score in the presence of class imbalance.
 
