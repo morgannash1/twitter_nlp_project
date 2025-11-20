@@ -4,6 +4,8 @@ Author: [Morgan Nash](mailto:morganmichellenash@gmail.com)
 
 November 2025
 
+See the full analysis in the [Jupyter Notebook](notebook.ipynb) 
+
 <img src="images/global_digital_network.jpg" width="800">
 
 # Introduction
@@ -15,7 +17,7 @@ This project uses Natural Language Processing (NLP) and Classification Methods t
 The presence of social media today allows for constant real-time communication which can present issues for companies to deal with. [Twitter](https://x.com/), now X, is one of the largest social media platforms where users' short messages are posted in real-time. One negative tweet could quickly blow up into a company's PR nightmare if left untouched. Ineffective monitoring of what's being said about a company online can lead to slow crisis response, missed customer service opportunities, and permanent brand damage. A classification model is necessary to filter out the noise and help to automate some of this process.
 
 
-## Objective:¶
+## Objective:
 Monitoring tweets manually would be impossible. The main goal of this project is to build an NLP classification model that acts as a screening system to categorize incoming online text into sentiment classes (negative, neutral, or positive). We prioritize the negative category, as it carries the highest risk. The model's primary features are the raw tweet text, and the mulit-class target is the sentiment. Once the model labels a tweet as negative, human teams can intervene and address them before they escalate, preventing minor complaints from growing into major public relations crises.
 
 <img src="images/domino_effect.jpg" width="600">
@@ -153,3 +155,7 @@ The final model's performance on the unseen test data achieved a Negative F1-Sco
 ## Recommendations
 
 ## Next Steps
+
+## For More Information
+
+See the full analysis in the [Jupyter Notebook](notebook.ipynb) 
