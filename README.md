@@ -27,7 +27,11 @@ The final model acts as a first-pass filtering system that can help several impo
 
 # Data Understanding
 
-The dataset used for this project comes from [CrowdFlower Open Source Datasets](https://data.world/crowdflower/brands-and-product-emotions) and contains over 9000 tweets from 2013 that reference Apple or Google products. The tweets were related to the [South by Southwest festival (SXSW)](https://www.sxsw.com/) and were rated by humans as to whether the tweets expressed positive, negative, no emotion towards a brand or product, or they couldn't tell. I combined the 'no emotion..' and 'can't tell' into a 'neutral' sentiment. The dataset originally contained 3 columns which I renamed for clarity: tweet, product_name, and sentiment. 
+The dataset used for this project comes from [CrowdFlower Open Source Datasets](https://data.world/crowdflower/brands-and-product-emotions) and contains over 9000 tweets from 2013 that reference Apple or Google products. The tweets were related to the [South by Southwest festival (SXSW)](https://www.sxsw.com/) and were rated by humans as to whether the tweets expressed positive, negative, no emotion towards a brand or product, or they couldn't tell. I combined the 'no emotion..' and 'can't tell' into a 'neutral' sentiment. The dataset originally contained 3 columns which I renamed for clarity: tweet, product_name, and sentiment.
+
+## Limitations
+
+
 
 ### Sentiment Distribution
 
@@ -52,17 +56,6 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 
 
 
-<img src="images/top_neg_uni_after_1.jpg" width="500"> <img src="images/top_neg_uni_after_2.jpg" width="500">
-
-<img src="images/top_pos_uni_after_1.jpg" width="500"> <img src="images/top_pos_uni_after_2.jpg" width="500">
-
-<img src="images/top_neg_bi_after_1.jpg" width="500"> <img src="images/top_neg_bi_after_2.jpg" width="500">
-
-<img src="images/top_pos_bi_after_1.jpg" width="500"> <img src="images/top_pos_bi_after_2.jpg" width="500">
-
-<img src="images/top_neg_tri_after_1.jpg" width="500"> <img src="images/top_neg_tri_after_2.jpg" width="500">
-
-<img src="images/top_pos_tri_after_1.jpg" width="500"> <img src="images/top_pos_tri_after_2.jpg" width="500">
 
 
 <img src="images/top_words_before.jpg" width="1000">
@@ -80,7 +73,7 @@ To prepare the data, I performed basic cleaning including removal of duplicates,
 
 # Conclusion
 
-## Limitations
+
 
 ## Recommendations
 
